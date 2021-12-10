@@ -1,11 +1,12 @@
 const { prompt } = require("inquirer");
 const db = require("./db");
 require("console.table");
-
-init();
+const index = require("./db/index"); 
 
 // prompt main questions for user to choose what to do.
 const promptQuestion = () => {
+  console.log("Welcome to employee tracker App!!"); 
+
     return prompt([
       {
         type: "list",
@@ -27,10 +28,10 @@ const promptQuestion = () => {
       switch (inquirerData.choice) {
         case "View Departments":
           viewDept();
-          return;
+          break;
         case "View Roles":
-          viewRoles();
-          return;
+           viewRoles(); 
+          break;
         case "View Employees":
           viewEmp();
           return;
@@ -50,10 +51,22 @@ const promptQuestion = () => {
           deleteEmp();
           return;
         case "Exit":
-          console.log(EXIT);
-          connection.end();
+          console.log("EXIT");
+          //connection.end();
+          process.exit(0); 
           return;
       }
     });
   };
 
+promptQuestion();
+
+async function viewRoles(){
+  //executing the SQL command in the DB , returns data from DB
+  const dataRows = await index.viewRoles();
+  console.log("Data from db", dataRows); 
+  //display in table format
+  console.log(dataRows); 
+  //ask the question again 
+  promptQuestion(); 
+}
