@@ -1,31 +1,29 @@
 use employees;
 
-INSERT INTO department
-    (name)
+INSERT INTO department (name)
 VALUES
     ('Sales'),
     ('Engineering'),
     ('Finance'),
-    ('Legal');
+    ('Service');
 
-INSERT INTO role
-    (title, salary, department_id)
+INSERT INTO role (title, salary, department_id)
 VALUES
+    ('Sales Manager', 180000, 1), 
     ('Salesperson', 80000, 1),
-    ('Lead Engineer', 150000, 2),
+    ('Project Manager', 150000, 2),
     ('Software Engineer', 120000, 2),
-    ('Account Manager', 160000, 3),
-    ('Accountant', 125000, 3),
-    ('Legal Team Lead', 250000, 4),
-    ('Lawyer', 190000, 4);
+    ('Account Manager', 140000, 3),
+    ('Accountant', 110000, 3),
+    ('Customer Service', 90000, 4);
 
-INSERT INTO employee
-    (first_name, last_name, role_id, manager_id)
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES
-    ('Mike', 'Chan', 2, NULL),
-    ('Ashley', 'Rodriguez', 3, 1),
-    ('Kevin', 'Tupik', 4, NULL),
-    ('Kunal', 'Singh', 5, 3),
-    ('Malia', 'Brown', 6, NULL),
-    ('Sarah', 'Lourd', 7, 5),
-    ('Tom', 'Allen', 1, 6);
+    ('Abby', 'Brown', 1, Null),
+    ('Mike', 'Chan', 2, 1),
+    ('Abby', 'Lew', 3, Null),
+    ('Kevin', 'Lee', 4, 3),
+    ('Max', 'Davis', 5, Null),
+    ('Malia', 'White', 6, 5),
+    ('Kiki', 'Lourd', 7, 1);
+ 
