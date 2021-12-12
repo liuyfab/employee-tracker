@@ -3,11 +3,10 @@
 # Description
 Employee-tracker creates a MySQL employee database. It allows you to manage your company's departments, roles, and employees by answering questions through node.js based command line interface. 
 
-1. Database Schema image
-![Landing Page](https://github.com/liuyfab/employee-tracker/blob/main/assets/Database_schema.png?raw=true)
-2. Screenshot of the application used from the command line
+1. Screenshot of the application used from the command line
 ![Landing Page](https://github.com/liuyfab/employee-tracker/blob/main/assets/Screenshot.png?raw=true)
-
+2. Database Schema image
+![Landing Page](https://github.com/liuyfab/employee-tracker/blob/main/assets/Database_schema.png?raw=true)
 # Link to Youtube Walkthrough video
 https://youtu.be/mPv3n5mrfFI
 
