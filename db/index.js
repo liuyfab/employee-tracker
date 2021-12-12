@@ -42,12 +42,19 @@ class DB {
     return this.connection.promise().query("INSERT INTO employee SET ?", employee);
   }
 
-  // Remove an employee with the given id
-  removeEmployee(employeeId) {
+  // Update an employee's role
+  updateEmployeeRole(employeeId, roleId) {
     return this.connection.promise().query(
-      "DELETE FROM employee WHERE id = ?",
-      employeeId
+      "UPDATE employee SET role_id = ? WHERE id = ?",
+      [roleId, employeeId]
     );
   }
 
-  module.exports = new DB(connection);
+  // Delete an employee with the given id
+  deleteEmployee(employeeId) {
+    return this.connection.promise().query(
+      "DELETE FROM employee WHERE id = ?", employeeId);
+  }
+}
+
+module.exports = new DB(connection);

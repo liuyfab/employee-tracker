@@ -275,7 +275,7 @@ function deleteEmp() {
           choices: employeeChoices
         }
       ])
-        .then(res => db.removeEmployee(res.employeeId))
+        .then(res => db.deleteEmployee(res.employeeId))
         .then(() => console.log("Removed employee from the database"))
         .then(() => promptQuestion())
     })
